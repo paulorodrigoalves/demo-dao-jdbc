@@ -21,6 +21,7 @@ public class Program {
 
         System.out.println(seller);
 
+        System.out.println();
         System.out.println("====  Teste 2: Testando a função findByDepartment ====");
 
         Department dp = new Department(2,null);
@@ -33,6 +34,16 @@ public class Program {
 
         }
 
+        System.out.println();
+        System.out.println("====  Teste 3: Testando a função findAll ====");
+
+        list = sellerDao.findAll();
+
+        for (Seller sl : list) {
+
+            System.out.println(sl);
+
+        }
 
     }
 }
