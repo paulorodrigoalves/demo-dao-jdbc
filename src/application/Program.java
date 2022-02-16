@@ -45,5 +45,10 @@ public class Program {
 
         }
 
+        System.out.println("====  Teste 4: Testando a função insert ====");
+        Seller newSeller = new Seller(null, "Paulo", "paulrodrigo@gmail.com", new Date(), 4000.0, dp);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserção com sucesso, Id: " + newSeller.getId());
+
     }
 }
