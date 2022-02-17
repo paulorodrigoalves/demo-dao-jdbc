@@ -7,11 +7,14 @@ import model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
 
     public static void main(String[] args) {
 
+
+        Scanner sc = new Scanner(System.in);
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
@@ -50,11 +53,17 @@ public class Program {
         sellerDao.insert(newSeller);
         System.out.println("Inserção com sucesso, Id: " + newSeller.getId());
 
-        System.out.println("\n====  Teste 5: Testando a função insert ====");
+        System.out.println("\n====  Teste 5: Testando a função update ====");
         seller = sellerDao.findById(1);
         seller.setName("Ana Alves");
         sellerDao.update(seller);
         System.out.println("Atualização completada!");
+
+        System.out.println("\n====  Teste 6: Testando a função delete ====");
+        System.out.println("Informe um id para ser deletado: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Seller deltado com sucesso!");
 
 
     }
