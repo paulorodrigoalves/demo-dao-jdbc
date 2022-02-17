@@ -15,37 +15,24 @@ public class Program {
 
 
         Scanner sc = new Scanner(System.in);
-
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
         System.out.println("\n====  Teste 1: Testando a função findById ====");
-
         Seller seller = sellerDao.findById(3);
-
         System.out.println(seller);
 
-        System.out.println();
         System.out.println("\n====  Teste 2: Testando a função findByDepartment ====");
-
         Department dp = new Department(2,null);
-
         List<Seller> list = sellerDao.findByDepartment(dp);
 
         for (Seller sl : list) {
-
             System.out.println(sl);
-
         }
 
-        System.out.println();
         System.out.println("\n====  Teste 3: Testando a função findAll ====");
-
         list = sellerDao.findAll();
-
         for (Seller sl : list) {
-
             System.out.println(sl);
-
         }
 
         System.out.println("\n====  Teste 4: Testando a função insert ====");
